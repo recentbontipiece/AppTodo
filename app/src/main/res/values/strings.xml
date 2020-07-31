@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SimpleTodoApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_field">Item Required</string>
+    <string name="edit_txtHint">Update the item</string>
+    <string name="add_itemHint"> Add an item here!</string>
+    <string name="bt_save">Save</string>
+    <string name="addItem">ADD</string>
 </resources>

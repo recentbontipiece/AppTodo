@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.example.model.Item" />
+
+        <variable
+            name="listener"
+            type="com.example.view.ItemClickListItemListener" />
+
+        <variable name="position" type="com.example.utilc.PositionHandle" />
+        <variable
+            name="listener2"
+            type="com.example.view.ItemLongClickListener" />
+    </data>
+
+    <LinearLayout
+        android:onClick="@{(view) -> listener.onItemClick(view, position)}"
+        android:onLongClick="@{(view) -> listener2.onLongClick(view, position)}"
+
+        android:id="@+id/itLayout"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(item.position)}"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            xmlns:card_view="https://schemas.android.com/apk/res-auto"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            card_view:cardElevation="5dp"
+            app:cardBackgroundColor="@color/cardview_light_background"
+            card_view:cardUseCompatPadding="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/itemText"
+                    style="@style/itemTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="59dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@{item.itemText}"
+                    android:textColor="@color/color_text_card" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
